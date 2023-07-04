@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Custom video player</title>
+  <!-- Material Icons CSS Link-->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Font Awesome 6 Library CSS File -->
+  <link rel="stylesheet" href="css/all.min.css" />
+  <!-- Main CSS File -->
+  <link rel="stylesheet" href="css/main.css" />
+  <!-- =========== Scripts ========== -->
+  <!-- <script src="js/all.min.js"></script> -->
+  <script src="js/main.js" defer></script>
+
+</head>
+
+<body>
+  <div class="container" id="videoContainer">
+    <div class="wrapper" id="controlsWrapper">
+      <!-- Start Timeline -->
+      <div class="video-timeline" id="videoTimeline">
+        <div class="progress-area">
+          <span id="timeOnHover">00:00</span>
+          <div class="progress-bar" id="videoProgress"></div>
+        </div>
+      </div>
+      <!-- End Timeline -->
+      <!-- Start Video Controls -->
+      <ul class="video-controls">
+        <li class="options left">
+          <button class="volume" type="button" id="volumeBtn">
+            <i class="fa-solid fa-volume-high icon"></i>
+          </button>
+          <input type="range" id="volumeSlider" min="0" step="any" max="1" />
+          <div class="video-timer">
+            <span class="current-time" id="currentTime">00:00</span>
+            <span class="separator">/</span>
+            <span class="video-duration" id="videoDuration">00:00</span>
+          </div>
+        </li>
+        <li class="options center">
+          <button type="button" class="skip-backward" id="skipBackwardBtn">
+            <i class="fa-solid fa-backward"></i>
+          </button>
+          <button type="button" class="play-pause" id="playPauseBtn">
+            <i class="fa-solid fa-play icon"></i>
+          </button>
+          <button type="button" class="skip-forward" id="skipForwardBtn">
+            <i class="fa-solid fa-forward"></i>
+          </button>
+        </li>
+        <li class="options right">
+          <div class="playback-wrapper">
+            <button type="button" class="playback-speed" id="playbackSpeedBtn">
+              <span class="material-symbols-rounded">
+                slow_motion_video
+              </span>
+            </button>
+            <ul class="playback-speed-list">
+              <li class="playback-speed-item" data-playback-speed="2">
+                2x
+              </li>
+              <li class="playback-speed-item" data-playback-speed="1.5">
+                1.5x
+              </li>
+              <li class="playback-speed-item active" data-playback-speed="1">
+                Normal
+              </li>
+              <li class="playback-speed-item" data-playback-speed="0.75">
+                0.75x
+              </li>
+              <li class="playback-speed-item" data-playback-speed="0.5">
+                0.5x
+              </li>
+            </ul>
+          </div>
+
+          <button type="button" class="pic-in-pic" id="picInPicBtn">
+            <span class="material-icons icon">
+              picture_in_picture_alt
+            </span>
+          </button>
+          <button type="button" class="fullscreen" id="fullscreenBtn">
+            <i class="fa-solid fa-expand fa-fw icon"></i>
+          </button>
+        </li>
+      </ul>
+      <!-- End Video Controls -->
+    </div>
+    <video id="videoElement">
+      <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+        type="video/mp4" />
+      Your browser does not support HTML5 video.
+    </video>
+  </div>
+</body>
+
+</html>
